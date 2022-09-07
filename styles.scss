@@ -72,6 +72,31 @@ input {
     }
 }
 
+.weather-container {
+    @include flex(row, space-evenly, center, wrap);
+
+    width: 100vw;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.container {
+    @include flex(column, center, center);
+
+    width: 150px;
+    height: 120px;
+    border: 0;
+    border-radius: 5px;
+    background-color: $black-primary;
+    color: $white-primary;
+}
+
+.min-max-container {
+    @include flex(row, center, center);
+
+    gap: 0.4rem;
+}
+
 .show {
     visibility: visible !important;
 }
