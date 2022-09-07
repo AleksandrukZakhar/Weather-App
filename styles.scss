@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+@mixin flex(
+    $direction: row,
+    $content: flex-start,
+    $items: stretch,
+    $wrap: nowrap
+) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $content;
+    align-items: $items;
+    flex-wrap: $wrap;
+}
+
+$black-primary: hsl(0, 0%, 0%, 0.8);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./assets/steven-kamenar-MMJx78V7xS8-unsplash.jpg");
+    overflow: hidden;
+}
+
+header {
+    @include flex(row, center, center);
+
+    margin-top: 2rem;
+}
+
+input {
+    display: block;
+    width: 400px;
+    height: 20px;
+    margin: 0 auto;
+    background-color: $black-primary;
+    border: 0;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+}
