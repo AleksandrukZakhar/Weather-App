@@ -1,4 +1,18 @@
 const KEY = "dfa0fc71cd912959d3815771c5d574d1";
+const input = document.querySelector("input");
+const search = document.querySelector(".search");
+
+input.addEventListener("input", () => {
+    search.classList.add("show");
+});
+
+search.addEventListener("click", () => {
+    url = `https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=${KEY}`;
+    input.value = "";
+    search.classList.remove("show");
+
+    getWeather(url);
+});
 
 const getWeather = async (url) => {
     const req = new Request(url);
@@ -16,7 +30,3 @@ const getWeather = async (url) => {
         throw new Error(err);
     }
 };
-
-getWeather(
-    `https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=${KEY}`
-);

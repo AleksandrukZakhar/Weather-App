@@ -14,6 +14,7 @@
 }
 
 $black-primary: hsl(0, 0%, 0%, 0.8);
+$white-primary: hsl(0, 0%, 100%);
 
 * {
     margin: 0;
@@ -35,6 +36,13 @@ header {
     margin-top: 2rem;
 }
 
+.input-container {
+    @include flex(row, center, center);
+
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
 input {
     display: block;
     width: 400px;
@@ -46,4 +54,24 @@ input {
     text-align: center;
     font-size: 1rem;
     color: white;
+}
+
+.search {
+    display: block;
+    width: 5rem;
+    height: 2rem;
+    visibility: hidden;
+    background-color: $black-primary;
+    color: $white-primary;
+    border: 0;
+    border-radius: 10px;
+
+    &:hover {
+        transition: transform 0.3s ease-in-out;
+        transform: scale(1.2);
+    }
+}
+
+.show {
+    visibility: visible !important;
 }
