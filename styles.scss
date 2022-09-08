@@ -15,6 +15,7 @@
 
 $black-primary: hsl(0, 0%, 0%, 0.8);
 $white-primary: hsl(0, 0%, 100%);
+$blue-primary: hsl(197, 71%, 73%, 0.9);
 
 * {
     margin: 0;
@@ -26,7 +27,7 @@ $white-primary: hsl(0, 0%, 100%);
 body {
     width: 100vw;
     height: 100vh;
-    background-image: url("./assets/steven-kamenar-MMJx78V7xS8-unsplash.jpg");
+    background-image: url("./assets/forest.jpg");
     overflow: hidden;
 }
 
@@ -72,11 +73,43 @@ input {
     }
 }
 
+.center {
+    @include flex(column, center, center);
+}
+
+.circle-container {
+    @include flex(row, center, center);
+
+    width: 400px;
+    margin-right: 5.5rem;
+    gap: 1rem;
+    visibility: hidden;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    background-color: $black-primary;
+    border: 0;
+    border-radius: 50%;
+}
+
+#prev,
+#next {
+    width: 65px;
+    height: 65px;
+}
+
+.blue {
+    background-color: $blue-primary;
+}
+
 .weather-container {
     @include flex(row, space-evenly, center, wrap);
 
+    display: none;
     width: 100vw;
-    gap: 2rem;
+    gap: 1rem;
     margin-top: 2rem;
 }
 
@@ -95,6 +128,10 @@ input {
     @include flex(row, center, center);
 
     gap: 0.4rem;
+}
+
+.show-weather {
+    display: flex;
 }
 
 .show {
